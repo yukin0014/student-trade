@@ -30,7 +30,7 @@ export default function MyPage() {
         setMySales(salesData);
 
         // 未読チェックロジック
-        salesData.forEach(p => {
+        salesData.forEach((p: any) => {
           if (p.isSold) {
             const lastSeen = Number(localStorage.getItem(`lastSeen_${p.id}`) || 0);
             const chatRef = collection(db, "products", p.id, "messages");
